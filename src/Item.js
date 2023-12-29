@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { itemAction } from "./store/CrudeSlice";
 
 export let editId;
-export let setId;
 
 export default function Item() {
   const [item, setItem] = useState("");
@@ -31,6 +30,7 @@ export default function Item() {
 
   const submitHandl = (e) => {
     e.preventDefault();
+    if (!item) return;
     dispatch(itemAction.addItem({ item }));
     setItem("");
     editId = "";
