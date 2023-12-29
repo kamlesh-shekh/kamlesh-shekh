@@ -27,6 +27,7 @@ const itemSlice = createSlice({
 
       localStorage.setItem("data", JSON.stringify(state.data));
     },
+
     pakedItem(state, action) {
       const check = action.payload;
       state.data = state.data.map((cur) =>
