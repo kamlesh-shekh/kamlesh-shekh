@@ -33,6 +33,8 @@ const itemSlice = createSlice({
       state.data = state.data.map((cur) =>
         cur.id === check ? { ...cur, paked: !cur.paked } : cur
       );
+
+      localStorage.setItem("data", JSON.stringify(state.data));
     },
     deleteItem(state, action) {
       const dlt = action.payload;

@@ -94,7 +94,7 @@ export default function Item() {
   );
 }
 
-function List({ selectData, eidtHandl, deletHandl, itemShow }) {
+function List({ selectData, eidtHandl, deletHandl }) {
   return selectData.map((cur, i) => (
     <ItemDiscription
       cur={cur}
@@ -111,7 +111,7 @@ function ItemDiscription({ cur, eidtHandl, deletHandl }) {
     <li className="mb-3 p-2 rounded bg-success d-flex gap-2 align-items-center">
       <input
         type="checkbox"
-        value={cur.paked}
+        checked={cur.paked}
         onChange={() => dispatch(itemAction.pakedItem(cur.id))}
       />
       <span
